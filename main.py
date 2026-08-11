@@ -40,3 +40,11 @@ def cadastrar_livro():
     livros.append(livro)
     salvar_livros()
     print("Livro cadastrado com sucesso!")
+
+# Função para listar todos os livros
+def listar_livros():
+    if not livros:
+        print("Nenhum livro cadastrado.")
+    else:
+        for livro in livros:
+            print(f"{livro['titulo']} - {livro['autor']} ({livro['ano']}) | Código: {livro['codigo']} | Status: {livro['status']}")
