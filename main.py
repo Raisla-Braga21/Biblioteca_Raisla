@@ -80,3 +80,15 @@ def devolver_livro():
             print("Devolução registrada!")
             return
     print("Livro não encontrado ou não está emprestado.")
+
+# Função para ordenar livros
+def ordenar_livros():
+    criterio = input("Ordenar por (titulo/autor/ano): ").lower()
+    if criterio in ["titulo", "autor", "ano"]:
+        ordenados = sorted(livros, key=lambda x: x[criterio])
+        for livro in ordenados:
+            print(f"{livro['titulo']} - {livro['autor']} ({livro['ano']}) | Status: {livro['status']}")
+    else:
+        print("Critério inválido.")
+
+              
