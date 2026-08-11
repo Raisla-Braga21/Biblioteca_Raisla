@@ -58,3 +58,14 @@ def buscar_livro():
             print(f"{livro['titulo']} - {livro['autor']} ({livro['ano']}) | Status: {livro['status']}")
     else:
         print("Nenhum livro encontrado.")
+
+# Função para emprestar livro
+def emprestar_livro():
+    codigo = input("Digite o código do livro: ")
+    for livro in livros:
+        if livro["codigo"] == codigo and livro["status"] == "disponível":
+            livro["status"] = "emprestado"
+            salvar_livros()
+            print("Empréstimo registrado!")
+            return
+    print("Livro não encontrado ou já emprestado.")
