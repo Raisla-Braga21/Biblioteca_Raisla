@@ -48,3 +48,13 @@ def listar_livros():
     else:
         for livro in livros:
             print(f"{livro['titulo']} - {livro['autor']} ({livro['ano']}) | Código: {livro['codigo']} | Status: {livro['status']}")
+
+# Função para buscar livro por título ou autor
+def buscar_livro():
+    termo = input("Digite o título ou autor: ").lower()
+    encontrados = [livro for livro in livros if termo in livro["titulo"].lower() or termo in livro["autor"].lower()]
+    if encontrados:
+        for livro in encontrados:
+            print(f"{livro['titulo']} - {livro['autor']} ({livro['ano']}) | Status: {livro['status']}")
+    else:
+        print("Nenhum livro encontrado.")
