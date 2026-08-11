@@ -91,4 +91,38 @@ def ordenar_livros():
     else:
         print("Critério inválido.")
 
+# Programa principal
+def main():
+    carregar_livros()
+    while True:
+        print("\n--- Sistema de Biblioteca ---")
+        print("1. Cadastrar livro")
+        print("2. Emprestar livro")
+        print("3. Devolver livro")
+        print("4. Listar livros")
+        print("5. Buscar livro")
+        print("6. Ordenar livros")
+        print("7. Sair")
+        opcao = input("Escolha uma opção: ")
+ 
+        if opcao == "1":
+            cadastrar_livro()
+        elif opcao == "2":
+            emprestar_livro()
+        elif opcao == "3":
+            devolver_livro()
+        elif opcao == "4":
+            listar_livros()
+        elif opcao == "5":
+            buscar_livro()
+        elif opcao == "6":
+            ordenar_livros()
+        elif opcao == "7":
+            print("Saindo... até logo!")
+            break
+        else:
+            print("Opção inválida, tente novamente.")
+ 
+if __name__ == "__main__":
+    main()
               
